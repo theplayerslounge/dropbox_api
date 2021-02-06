@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 module DropboxApi::Endpoints::Files
   class ListFolderLongpoll < DropboxApi::Endpoints::RpcNotify
     Method      = :post
-    Path        = "/2/files/list_folder/longpoll".freeze
+    Path        = '/2/files/list_folder/longpoll'
     ResultType  = DropboxApi::Results::ListFolderLongpollResult
     ErrorType   = DropboxApi::Errors::ListFolderLongpollError
 
@@ -23,13 +25,13 @@ module DropboxApi::Endpoints::Files
     #   support long timeouts. The default for this field is 30.
     add_endpoint :list_folder_longpoll do |cursor, options = {}|
       validate_options([
-        :timeout
-      ], options)
+                         :timeout
+                       ], options)
       options[:timeout] ||= 30
 
       perform_request options.merge({
-        :cursor => cursor
-      })
+                                      :cursor => cursor
+                                    })
     end
   end
 end

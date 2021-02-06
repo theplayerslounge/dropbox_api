@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module DropboxApi::Errors
   class SharePathError < BasicError
     ErrorSubtypes = {
@@ -11,7 +13,7 @@ module DropboxApi::Errors
       :already_shared => AlreadySharedError,
       :invalid_path => InvalidPathError,
       :is_osx_package => IsOsxPackageError,
-      :inside_osx_package => InsideOsxPackageError,
+      :inside_osx_package => InsideOsxPackageError
     }.freeze
   end
 end

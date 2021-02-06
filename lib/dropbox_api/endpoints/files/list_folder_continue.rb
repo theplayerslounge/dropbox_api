@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 module DropboxApi::Endpoints::Files
   class ListFolderContinue < DropboxApi::Endpoints::Rpc
     # NOTE: This hasn't been tested with real data, I couldn't make a query
     #       long enough to enable the `has_more` attribute in the
     #       `ListFolderResult`.
     Method      = :post
-    Path        = "/2/files/list_folder/continue".freeze
+    Path        = '/2/files/list_folder/continue'
     ResultType  = DropboxApi::Results::ListFolderResult
     ErrorType   = DropboxApi::Errors::ListFolderContinueError
 

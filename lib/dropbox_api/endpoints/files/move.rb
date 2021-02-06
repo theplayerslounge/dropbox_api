@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 module DropboxApi::Endpoints::Files
   class Move < DropboxApi::Endpoints::Rpc
     Method      = :post
-    Path        = "/2/files/move".freeze
+    Path        = '/2/files/move'
     ResultType  = DropboxApi::Metadata::Resource
     ErrorType   = DropboxApi::Errors::RelocationError
 
@@ -21,13 +23,13 @@ module DropboxApi::Endpoints::Files
       # because according to Dropbox's documentation: "This field is always
       # true for move".
       validate_options([
-        :autorename
-      ], options)
+                         :autorename
+                       ], options)
 
       perform_request options.merge({
-        :from_path => from,
-        :to_path => to
-      })
+                                      :from_path => from,
+                                      :to_path => to
+                                    })
     end
   end
 end
